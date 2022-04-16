@@ -1,0 +1,14 @@
+name: analysers
+description: analysers
+version: 0.0.1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  technical_indicators:
+    path: ../technical_indicators
+dev_dependencies:
+  dartz: ^0.10.1
+  kite_connect:
+    path: ../kite_connect
+  test: ^1.19.5
