@@ -6,9 +6,9 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 dependencies:
   technical_indicators:
-    path: ../technical_indicators
+    git: git@github.com:akashdalvi11/technical_indicators.git 
 dev_dependencies:
   dartz: ^0.10.1
   kite_connect:
-    path: ../kite_connect
+    git: git@github.com:akashdalvi11/kite_connect.git
   test: ^1.19.5

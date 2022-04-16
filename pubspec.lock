@@ -72,7 +72,7 @@ packages:
     source: hosted
     version: "3.0.1"
   dartz:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: dartz
       url: "https://pub.dartlang.org"
@@ -130,9 +130,11 @@ packages:
   kite_connect:
     dependency: "direct dev"
     description:
-      path: "../kite_connect"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "81ff37eeb02476b86f6e2af969b5d728731d0d6d"
+      url: "git@github.com:akashdalvi11/kite_connect.git"
+    source: git
     version: "0.0.1"
   logging:
     dependency: transitive
@@ -270,9 +272,11 @@ packages:
   technical_indicators:
     dependency: "direct main"
     description:
-      path: "../technical_indicators"
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "345f7e994ea71154e6fe9a8a70282cf6926ff90d"
+      url: "git@github.com:akashdalvi11/technical_indicators.git"
+    source: git
     version: "0.0.1"
   term_glyph:
     dependency: transitive
