@@ -25,26 +25,28 @@ void main(){
             data = HistoricalData.createOHLC(r.dateTimeList,r.ohlcList);
         });
     });
-    test('analyser backtest',(){
+    test('emaHeikenAshiAnalyser backtest',(){
         assert(data != null);
         var uDateTimeList = data!.dateTimeList.sublist(150);
         var uDataList = data!.dataList.sublist(150);
         var end = data!.dateTimeList.length;
         data!.dateTimeList.removeRange(150,end);
         data!.dataList.removeRange(150,end);
-        var dataTree = consts.emaTree.build(data!);
-        var emaAnalyser = EMAAnalyser(dataTree);
-        print(emaAnalyser.inference);
+        var dataTree = consts.emaHeikenAshiTree.build(data!);
+        var eha = EMAHeikenAshiAnalyser(dataTree);
+        print(eha.inference);
         for(int i=0;i<uDataList.length;i++){
-            int? inference = emaAnalyser.update(uDateTimeList[i],uDataList[i].o);
+            int? inference = eha.update(uDateTimeList[i],uDataList[i].o);
             stdout.write("${dataTree.dateTimeList[150+i-1]}: ");
+            stdout.write("${eha.inference}: ");
             stdout.write("${dataTree.dataList[150+i-1]}: ");
             stdout.write("${dataTree.children[0].dataList[150+i-1]}: ");
+            stdout.write("${dataTree.children[0].children[0].dataList[150+i-1]}: ");
             if(inference != null) stdout.write('$inference');
             stdout.write('\n');
-            emaAnalyser.update(uDateTimeList[i],uDataList[i].h);
-            emaAnalyser.update(uDateTimeList[i],uDataList[i].l);
-            emaAnalyser.update(uDateTimeList[i],uDataList[i].c);
+            eha.update(uDateTimeList[i],uDataList[i].h);
+            eha.update(uDateTimeList[i],uDataList[i].l);
+            eha.update(uDateTimeList[i],uDataList[i].c);
         }
     });
 }

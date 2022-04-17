@@ -4,3 +4,10 @@ var emaTree = IndicatorSpecTree<Candle>(
         IndicatorSpecNode<EMA>({'period':10},[])
     ]
 );
+var emaHeikenAshiTree = IndicatorSpecTree<Candle>(
+    5,[
+        IndicatorSpecNode<HeikenAshi>({},[
+            IndicatorSpecNode<EMA>({'period':10},[])
+        ])
+    ]
+);

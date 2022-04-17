@@ -46,5 +46,4 @@ app.*.map.json
 /android/app/release
 
 #personal
-lib/src/emaHeikenAshiAnalyser.dart
-output
+/*output

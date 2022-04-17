@@ -44,10 +44,13 @@ class EMAAnalyser{
 		if(indicatorDataTree.update(Event(d,ltp))){
 			int sl = indicatorDataTree.dateTimeList.length-2;
 			if(inference != 0){
-				if(!_isStateSimilar(cl[sl],el[sl],inference)) return _checkInference(cl[sl],el[sl]);
+				if(!_isStateSimilar(cl[sl],el[sl],inference)){
+					inference = _checkInference(cl[sl],el[sl]);
+					return inference;
+				}
 			}else{
-				int i = _checkInference(cl[sl],el[sl]);
-				if(i != 0) return i;
+				inference = _checkInference(cl[sl],el[sl]);
+				if(inference != 0) return inference;
 			}
 		}		
 	}
