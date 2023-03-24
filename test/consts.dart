@@ -11,3 +11,18 @@ var emaHeikenAshiTree = IndicatorSpecTree<Candle>(
         ])
     ]
 );
+var smaTree = IndicatorSpecTree<Candle>(
+    3,[
+  IndicatorSpecNode<SMA>({'period':9},[]),
+  IndicatorSpecNode<Stochastic>({'period':15},[
+    IndicatorSpecNode<SMA>({'period':3}, [
+      IndicatorSpecNode<SMA>({'period':3}, [])
+    ])
+  ]),
+  IndicatorSpecNode<Stochastic>({'period':12},[
+    IndicatorSpecNode<SMA>({'period':3}, [
+      IndicatorSpecNode<SMA>({'period':3}, [])
+    ])
+  ])
+]
+);
